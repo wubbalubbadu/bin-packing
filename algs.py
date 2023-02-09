@@ -78,11 +78,37 @@ def best_fit_desc(i):
     return len(bins)
 
 if __name__ == '__main__':
-    # items = open('data.csv').readlines()
-    num_items = 30000
-    # items = [random.random() * 0.5 for i in range(num_items//2)] + [0.5 + random.random() * 0.5 for i in range(num_items//2)]
-    # print(sum(items))
-    items = [0.2, 0.5, 0.4, 0.7, 0.1, 0.3, 0.8]
+    res1 = res2 = res3 = res4 = 0
+    num_items = 10000
+    for i in range(10):
+        # case 1
+        # items = [random.random() for i in range(num_items)]
+         # case 2
+        # items = sorted([random.random() for i in range(num_items)])
+        # case 3
+        # items =  [random.random() * 0.5 for i in range(int(num_items) * 0.2)] + [0.5 + random.random() * 0.5 for i in range(int(num_items) * 0.8)]
+        # case 4
+        # items = [0.3 * random.random() for i in range(num_items)]
+
+        
+        res1 += first_fit(items)
+        res2 += first_fit_desc(items)
+        res3 += best_fit(items)
+        res4 += best_fit_desc(items)
+        print("First Fit: number of bins used: %d" % first_fit(items))
+        print("First Fit Descending: number of bins used: %d" % first_fit_desc(items))
+        print("Best Fit: number of bins used: %d" % best_fit(items))
+        print("Best Fit Descending: number of bins used: %d" % best_fit_desc(items))
+    print("first fit = ", res1/10, "first fit desc = ", res2/10, "best fit = ", res3/10, "best fit desc = ", res4/10)
+
+    # [random.random() * 0.5 for i in range(num_items//2)] + [0.5 + random.random() * 0.5 for i in range(num_items//2)]
+
+  
+
+
+
+    print(sum(items))
+    
     print("First Fit: number of bins used: %d" % first_fit(items))
 
     print("First Fit Descending: number of bins used: %d" % first_fit_desc(items))
