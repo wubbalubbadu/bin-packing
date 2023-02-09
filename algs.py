@@ -85,8 +85,8 @@ if __name__ == '__main__':
         # items = [random.random() for i in range(num_items)]
          # case 2
         # items = sorted([random.random() for i in range(num_items)])
-        # case 3
-        # items =  [random.random() * 0.5 for i in range(int(num_items) * 0.2)] + [0.5 + random.random() * 0.5 for i in range(int(num_items) * 0.8)]
+        case 3
+        items =  [random.random() * 0.5 for i in range(int(num_items) * 0.2)] + [0.5 + random.random() * 0.5 for i in range(int(num_items) * 0.8)]
         # case 4
         # items = [0.3 * random.random() for i in range(num_items)]
 
